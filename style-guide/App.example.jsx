@@ -3,17 +3,19 @@
 // and content that the component should render.
 // Remember to import Ant Design components before using them.
 import { Row, Divider } from "antd";
+import foodJson from "./food.json";
+
+import FoodBox from "./FoodBox";
 
 function App() {
+  const [foods, setFoods] = useStates(foodJson);
+
   return (
     <div className="App">
-      {/* Display Search component here */}
+      <h1>LAB | React IronNutrition</h1>
 
-      <Divider>Food List</Divider>
-
-      <Row style={{ width: "100%", justifyContent: "center" }}>
-        {/* Render the list of Food Box components here */}
-      </Row>
+      <foodList />
+      
     </div>
   );
 }
